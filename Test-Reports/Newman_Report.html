@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Newman API Test Report - RESTful User API Testing</title>
+<style>
+  :root {
+    --bg: #f4f7fb;
+    --card: #ffffff;
+    --text: #172033;
+    --muted: #667085;
+    --border: #e4e7ec;
+    --primary: #2563eb;
+    --success: #16a34a;
+    --danger: #dc2626;
+    --warning: #d97706;
+    --shadow: 0 8px 28px rgba(16,24,40,.07);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  }
+  .container { max-width: 1180px; margin: 0 auto; padding: 34px 22px 60px; }
+  .hero {
+    background: linear-gradient(135deg, #172554, #2563eb);
+    color: white; border-radius: 18px; padding: 34px;
+    box-shadow: var(--shadow); margin-bottom: 22px;
+  }
+  .hero h1 { margin: 0 0 8px; font-size: 30px; }
+  .hero p { margin: 5px 0; opacity: .9; }
+  .meta { display:flex; flex-wrap:wrap; gap:10px; margin-top:20px; }
+  .chip { background: rgba(255,255,255,.14); padding:8px 12px; border-radius:999px; font-size:13px; }
+  .grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin:20px 0; }
+  .card {
+    background:var(--card); border:1px solid var(--border); border-radius:14px;
+    padding:20px; box-shadow:var(--shadow);
+  }
+  .metric { font-size:30px; font-weight:800; margin:7px 0 2px; }
+  .label { color:var(--muted); font-size:13px; }
+  .success { color:var(--success); } .danger { color:var(--danger); }
+  .warning { color:var(--warning); }
+  .section { margin-top:22px; }
+  h2 { font-size:20px; margin:0 0 14px; }
+  table { width:100%; border-collapse:collapse; background:white; border-radius:14px; overflow:hidden; box-shadow:var(--shadow); }
+  th, td { padding:13px 14px; border-bottom:1px solid var(--border); text-align:left; font-size:14px; }
+  th { background:#f8fafc; font-size:12px; text-transform:uppercase; letter-spacing:.04em; color:#475467; }
+  tr:last-child td { border-bottom:0; }
+  .badge { display:inline-block; padding:5px 9px; border-radius:999px; font-size:12px; font-weight:700; }
+  .pass { background:#dcfce7; color:#166534; } .fail { background:#fee2e2; color:#991b1b; }
+  .defect { border-left:5px solid var(--warning); }
+  .defect strong { font-size:18px; }
+  .two { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+  ul { margin:8px 0 0 20px; line-height:1.8; }
+  .progress { height:12px; background:#e5e7eb; border-radius:999px; overflow:hidden; margin-top:12px; }
+  .progress > div { height:100%; width:83.33%; background:var(--success); }
+  .footer { text-align:center; color:var(--muted); font-size:12px; margin-top:30px; }
+  @media(max-width:800px) {
+    .grid { grid-template-columns:repeat(2,1fr); }
+    .two { grid-template-columns:1fr; }
+  }
+  @media(max-width:520px) {
+    .grid { grid-template-columns:1fr; }
+    .hero { padding:25px; }
+    th, td { padding:10px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="hero">
+    <h1>🧪 Newman API Test Report</h1>
+    <p>RESTful User API Testing — Automated Postman/Newman Execution Summary</p>
+    <div class="meta">
+      <span class="chip">Project: RESTful User API Testing</span>
+      <span class="chip">Tool: Postman / Newman</span>
+      <span class="chip">API: ReqRes</span>
+      <span class="chip">Tester: Geeth</span>
+      <span class="chip">Date: 08 September 2026</span>
+    </div>
+  </header>
+
+  <section class="grid">
+    <div class="card"><div class="label">Total Test Cases</div><div class="metric">6</div></div>
+    <div class="card"><div class="label">Passed</div><div class="metric success">5</div></div>
+    <div class="card"><div class="label">Failed</div><div class="metric danger">1</div></div>
+    <div class="card"><div class="label">Pass Rate</div><div class="metric">83.33%</div><div class="progress"><div></div></div></div>
+  </section>
+
+  <section class="section">
+    <h2>🔎 Test Results</h2>
+    <table>
+      <thead><tr><th>ID</th><th>Test Scenario</th><th>Expected</th><th>Actual</th><th>Result</th></tr></thead>
+      <tbody>
+        <tr><td>TC-001</td><td>Get Users</td><td>200</td><td>200</td><td><span class="badge pass">PASS</span></td></tr>
+        <tr><td>TC-002</td><td>Create User</td><td>201</td><td>201</td><td><span class="badge pass">PASS</span></td></tr>
+        <tr><td>TC-003</td><td>Update User</td><td>200</td><td>200</td><td><span class="badge pass">PASS</span></td></tr>
+        <tr><td>TC-004</td><td>Delete User</td><td>204</td><td>204</td><td><span class="badge pass">PASS</span></td></tr>
+        <tr><td>TC-005</td><td>Invalid User</td><td>404</td><td>404</td><td><span class="badge pass">PASS</span></td></tr>
+        <tr><td>TC-006</td><td>Invalid Endpoint</td><td>404</td><td>401</td><td><span class="badge fail">FAIL</span></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="section two">
+    <div class="card defect">
+      <strong>🐞 BUG-001 — Invalid Endpoint</strong>
+      <ul>
+        <li><b>Expected:</b> 404 Not Found</li>
+        <li><b>Actual:</b> 401 Unauthorized</li>
+        <li><b>Severity:</b> Medium</li>
+        <li><b>Priority:</b> Medium</li>
+        <li><b>Status:</b> Open / Needs Verification</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>🎯 Testing Covered</h2>
+      <ul>
+        <li>GET, POST, PUT and DELETE APIs</li>
+        <li>HTTP status code validation</li>
+        <li>JSON response validation</li>
+        <li>Positive testing</li>
+        <li>Negative testing</li>
+        <li>Postman automated assertions</li>
+        <li>Bug reporting</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>📸 Evidence</h2>
+    <div class="card">
+      <ul>
+        <li>BUG-001.png</li>
+        <li>TC-001-Get-Users.png</li>
+        <li>TC-002-Create-User.png</li>
+        <li>TC-003-Update-User.png</li>
+        <li>TC-004-Delete-User.png</li>
+        <li>TC-005-Get-Invalid-User.png</li>
+        <li>TC-006-Invalid-Endpoint.png</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>🏁 Conclusion</h2>
+    <div class="card">
+      <p><b>6 test cases</b> were executed. <b>5 passed</b> and <b>1 failed</b>.</p>
+      <p>TC-006 failed because the invalid endpoint returned <b>401 Unauthorized</b> instead of the expected <b>404 Not Found</b>. The issue is documented as <b>BUG-001</b> and requires further verification.</p>
+      <p><b>Overall Status:</b> <span class="warning">⚠️ Partially Passed</span></p>
+    </div>
+  </section>
+
+  <div class="footer">Generated from the project's Test Execution Report • Newman-style HTML report</div>
+</div>
+</body>
+</html>
